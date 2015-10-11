@@ -5,18 +5,39 @@ body {
 }
 
 h1 {
-  margin-top: 100px;
-  margin-bottom: 10px;
+  margin-top: 50px;
+/*  margin-bottom: 10px;*/
   text-align: center;
   font-size: 70px;
 }
+
+h2{
+	font-size: 40px;
+}
+
+hr {
+    border: 0;
+    height: 0; /* Firefox... */
+    box-shadow: 0 0 10px 1px black;
+}
+
+button{
+	width: 100px;
+	height: 30px;
+	margin-left: 650px;
+}
+
+#wrapper{
+	margin-left: 50px;
+	margin-top: -30px;
+}
+
 
 #photodisplay{
 	padding: 15px;
 	float: left;
 	background-color: gray;
-	margin-left: 50px;
-	margin-top: 10px;
+	margin-top: 30px;
 }
 
 #photodisplay img{
@@ -36,5 +57,11 @@ h1 {
 }
 
 #responses{
+	padding: 10px;
 	clear: both;
+}
+
+#userSubmit{
+	width: 800px;
+	margin-top: 10px;
 }
