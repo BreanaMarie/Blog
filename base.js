@@ -16,7 +16,12 @@ $("#photoselector img").on('click', function(e){
 $('#photodisplay img').attr('src', image);
 });
 	
+$("#primarySubmit").on('submit', function(e){
+	e.preventDefault();
+	var submission = $("#userSubmit").val();
+	console.log(submission);
 
+});
 
 
 //create on submit function on form, text drops below as done
