@@ -17,7 +17,7 @@ h2{
 
 hr {
     border: 0;
-    height: 0; /* Firefox... */
+    height: 0;
     box-shadow: 0 0 10px 1px black;
     font-size: 30px;
 }
@@ -25,7 +25,7 @@ hr {
 button{
 	width: 100px;
 	height: 30px;
-	margin-left: 650px;
+
 }
 
 #wrapper{
@@ -42,7 +42,7 @@ button{
 }
 
 #photodisplay img{
-	max-width: 550px;
+	max-width: 100%;
 }
 
 #photoselector{
@@ -63,7 +63,16 @@ button{
 }
 
 #userSubmit{
-	width: 800px;
+	width: 80%;
 	margin-top: 10px;
 	margin-left: 15px;
+}
+#primarySubmit button{
+	width:20%;
+	float: right;
+	margin-right: 150px;
+}
+
+#inspiTabs{
+	clear:both;
 }
