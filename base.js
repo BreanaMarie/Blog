@@ -21,11 +21,24 @@ $('#photodisplay img').attr('src', image);
 $("#primarySubmit").on('submit', function(e){
 	e.preventDefault();
 	var submission = $("#userSubmit").val();
-	console.log(submission);
+	//console.log(submission);
 
 //get the image that was used for inspiration
 	
 $('#imageSelected').attr('value', image);
+
+//get a time stamp for the submission
+var dateTime= new Date();
+$('#timeSubmit').attr('value', dateTime);
+
+//create a switch statement that sorts the primary submission by the 
+//image selected and pushes the information into corilating tabs
+switch(image){
+	case 'images/road1.jpg':
+	$('#inspiphoto1').append(submission + dateTime);
+	break;
+}
+
 });
 
 //clickable tabs
