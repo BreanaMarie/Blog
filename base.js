@@ -25,7 +25,7 @@ $("#primarySubmit").on('submit', function(e){
 
 //get the image that was used for inspiration
 	
-
+$('#imageSelected').attr('value', image);
 });
 
 //clickable tabs
