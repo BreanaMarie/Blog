@@ -2,6 +2,8 @@ console.log("Sanity Check: JS is working!");
 
 $(document).ready(function(){
 
+var image='';
+
 //Start with a random inspiration photo
 window.onload= function (){
  	var rand = Math.round((Math.random() * 15) + 1);
@@ -53,11 +55,13 @@ window.onload= function (){
 		$('#photodisplay img').attr('src' , 'images/road15.jpg');
 		break;
 	}
+	
+	image = $("#photodisplay img").attr('src');
 
 };
 
 //create on thumbnail click full image appears in display to left
-var image='';
+
 
 $("#photoselector img").on('click', function(e){
 	e.preventDefault();
@@ -74,65 +78,65 @@ $('#photodisplay img').attr('src', image);
 $("#primarySubmit").on('submit', function(e){
 	e.preventDefault();
 	var submission = $("#userSubmit").val();
-	//console.log(submission);
+	var submitName = $("#submiterName").val();
+	console.log(submission);
 
-//get the image that was used for inspiration
-	
-$('#imageSelected').attr('value', image);
+	//get the image that was used for inspiration
+	$('#imageSelected').attr('value', image);
 
-//get a time stamp for the submission
-var dateTime= new Date();
-$('#timeSubmit').attr('value', dateTime);
+	//get a time stamp for the submission
+	var dateTime= new Date();
+	$('#timeSubmit').attr('value', dateTime);
 
-//create a switch statement that sorts the primary submission by the 
-//image selected and pushes the information into corilating tabs
-switch(image){
-	case 'images/road1.jpg':
-	$('#inspiOneSubmits').append(submission + dateTime);
-	break;
-	case 'images/road2.jpg':
-	$('#inspiphoto2').append(submission + dateTime);
-	break;
-	case 'images/road3.jpg':
-	$('#inspiphoto3').append(submission + dateTime);
-	break;
-	case 'images/road4.jpg':
-	$('#inspiphoto4').append(submission + dateTime);
-	break;
-	case 'images/road5.jpg':
-	$('#inspiphoto5').append(submission + dateTime);
-	break;
-	case 'images/road6.jpg':
-	$('#inspiphoto6').append(submission + dateTime);
-	break;
-	case 'images/road7.jpg':
-	$('#inspiphoto7').append(submission + dateTime);
-	break;
-	case 'images/road8.jpg':
-	$('#inspiphoto8').append(submission + dateTime);
-	break;
-	case 'images/road9.jpg':
-	$('#inspiphoto9').append(submission + dateTime);
-	break;
-	case 'images/road10.jpg':
-	$('#inspiphoto10').append(submission + dateTime);
-	break;
-	case 'images/road11.jpg':
-	$('#inspiphoto11').append(submission + dateTime);
-	break;
-	case 'images/road12.jpg':
-	$('#inspiphoto12').append(submission + dateTime);
-	break;
-	case 'images/road13.jpg':
-	$('#inspiphoto13').append(submission + dateTime);
-	break;
-	case 'images/road14.jpg':
-	$('#inspiphoto14').append(submission + dateTime);
-	break;
-	case 'images/road15.jpg':
-	$('#inspiphoto15').append(submission + dateTime);
-	break;
-}
+	//create a switch statement that sorts the primary submission by the 
+	//image selected and pushes the information into corilating tabs
+	switch(image){
+		case 'images/road1.jpg':
+		$('#inspi1Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road2.jpg':
+		$('#inspi2Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road3.jpg':
+		$('#inspi3Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road4.jpg':
+		$('#inspi4Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road5.jpg':
+		$('#inspi5Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road6.jpg':
+		$('#inspi6Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road7.jpg':
+		$('#inspi7Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road8.jpg':
+		$('#inspi8Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road9.jpg':
+		$('#inspi9Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road10.jpg':
+		$('#inspi10Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road11.jpg':
+		$('#inspi11Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road12.jpg':
+		$('#inspi12Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road13.jpg':
+		$('#inspi13Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road14.jpg':
+		$('#inspi14Submits').append(submitName + submission + dateTime);
+		break;
+		case 'images/road15.jpg':
+		$('#inspi15Submits').append(submitName + submission + dateTime);
+		break;
+	}
 
 });
 
