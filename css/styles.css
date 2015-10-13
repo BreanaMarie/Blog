@@ -1,7 +1,7 @@
 body {
   color: #333;
   font-family: Helvetica, Arial, sans-serif;
-  background-color: skyblue; /* Sanity Check! */
+  /*background-color: skyblue; /* Sanity Check! */
 }
 
 h1 {
@@ -9,16 +9,18 @@ h1 {
 /*  margin-bottom: 10px;*/
   text-align: center;
   font-size: 70px;
+  font-family: Impact, Charcoal, sans-serif;
 }
 
 h2{
 	font-size: 40px;
+	margin-bottom: 5px;
 }
 
 hr {
     border: 0;
     height: 0;
-    box-shadow: 0 0 10px 1px black;
+    box-shadow: 0 0 10px 1px yellow;
     font-size: 30px;
 }
 
@@ -28,17 +30,28 @@ button{
 
 }
 
+body{
+	background-image: url('../images/backroad.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-image: center;
+	background-size: 100%;
+	color:black;
+}
+
 #wrapper{
 	margin-left: 50px;
 	margin-top: -40px;
 	margin-bottom: 100px;
+	font-family: Verdana,Geneva, sans-serif;
+
 }
 
 
 #photodisplay{
 	padding: 15px;
 	float: left;
-	background-color: gray;
+	background-color: black;
 	margin-top: 30px;
 }
 
@@ -53,7 +66,7 @@ button{
 
 #photoselector img{
 	float: left;
-	max-width: 70px;
+	max-width: 80px;
 	padding: 10px;
 	max-height: 64px;
 }
@@ -78,6 +91,11 @@ button{
 	clear:both;
 }
 
+#inspiTabs h2{
+	font-size: 30px;
+	padding: 10px;
+}
+
 .tab-pane img{
 	padding: 15px;
 	background-color: gray;
@@ -87,4 +105,14 @@ button{
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 650px;
+}
+a:link {
+	color: black;
+}
+a:hover { 
+    background-color: yellow;
+}
+
+#inspiOneSubmits{
+
 }

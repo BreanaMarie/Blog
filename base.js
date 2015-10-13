@@ -55,7 +55,7 @@ window.onload= function (){
 		$('#photodisplay img').attr('src' , 'images/road15.jpg');
 		break;
 	}
-	
+
 	image = $("#photodisplay img").attr('src');
 
 };
@@ -74,6 +74,7 @@ $("#photoselector img").on('click', function(e){
 $('#photodisplay img').attr('src', image);
 });
 	
+var allFields='';	
 //gets the content submitted by primary user
 $("#primarySubmit").on('submit', function(e){
 	e.preventDefault();
@@ -87,6 +88,19 @@ $("#primarySubmit").on('submit', function(e){
 	//get a time stamp for the submission
 	var dateTime= new Date();
 	$('#timeSubmit').attr('value', dateTime);
+
+	//make the submission look like a pretty block of text
+	// allFields = $('<TABLE>
+	// 			   <TR>
+	// 			      <TD>' + submitName + '</TD>
+	// 			   </TR>
+	// 			   <TR>
+	// 			      <TD>' + submission + '</TD>
+	// 			   </TR>
+	// 			   <TR>
+	// 			      <TD>' + dateTime +'</TD>
+	// 			   </TR>
+	// 			</TABLE>');
 
 	//create a switch statement that sorts the primary submission by the 
 	//image selected and pushes the information into corilating tabs
@@ -140,6 +154,13 @@ $("#primarySubmit").on('submit', function(e){
 
 });
 
+//a like button function counter
+$("#like").click(function() {
+    $('#counter').html(function(i, val) { 
+    	return + val+1 ;
+	});
+});
+
 //clickable tabs
 $('#inspiTabs a[href="#profile"]').tab('show'); // Select tab by name
 $('#inspiTabs a:first').tab('show'); // Select first tab
@@ -148,6 +169,11 @@ $('#inspiTabs a:last').tab('show'); // Select last tab
 $('#inspiTabs a').click(function (e) {
   e.preventDefault();
   $(this).tab('show');
+});
+
+//set default tab showing
+$(window).load(function(){
+    $('#inspiTabs a[href="#recents"]').tab('show');
 });
 
 //create on submit function on form, text drops below as done
