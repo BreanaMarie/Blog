@@ -78,9 +78,9 @@ $('#photodisplay img').attr('src', image);
 var likebtn= ('<button id="like" type="submit" class="form-control">Like</button>' + 
 	'<div id="counter"><p>There are currently: 0 Likes for this Submission</p></div>');
 
-var createForm='';
+//var createForm='';
 var sort='';	
-var allFields='';	
+//var allFields='';	
 //gets the content submitted by primary user
 $("#primarySubmit").on('submit', function(e){
 	e.preventDefault();
@@ -96,11 +96,11 @@ $("#primarySubmit").on('submit', function(e){
 	$('#timeSubmit').attr('value', dateTime);
 
 	//make the submission look like a pretty block of text
-	allFields = ('<div><h2>' +  submitName + '</h2></br><p>' + submission + 
+	var allFields = ('<div><h2>' +  submitName + '</h2></br><p>' + submission + 
 		'</p></br><p align="right">' + dateTime + '</p></div>'); 
 
 	//add a form to primary submission
-	createForm= ('<div><form id="afterSubmit" class="col-sm-offset-1 col-sm-11" action="" method="PUT">'+
+	var createForm= ('<div><form id="afterSubmit" class="col-sm-offset-1 col-sm-11" action="" method="PUT">'+
 		'<label><h2>Want to Respond to this Writer?</h2></label></br>'+
 		'<input id="submiterName2" type="text" name="name" placeholder="Enter Your Name"></input>'+
 		'</br><textarea id="userSubmit2"class="form-contol col-sm-offset-1 col-sm-10" rows="5" col="100" placeholder="Enter your response here" name="secondarySubmit"></textarea>'+
@@ -108,7 +108,8 @@ $("#primarySubmit").on('submit', function(e){
 		'<div id="allResponse"></div>'
 		);
 
-
+	//add submission to recent submissions
+	$('#recents').append(allFields + 'in response to image' + image + '</br>' + likebtn + createForm);
 
 	//create a switch statement that sorts the primary submission by the 
 	//image selected and pushes the information into corilating tabs
@@ -118,46 +119,46 @@ $("#primarySubmit").on('submit', function(e){
 		$('#inspi1Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road2.jpg':
-		$('#inspi2Submits').append(allFields);
+		$('#inspi2Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road3.jpg':
-		$('#inspi3Submits').append(allFields);
+		$('#inspi3Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road4.jpg':
-		$('#inspi4Submits').append(allFields);
+		$('#inspi4Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road5.jpg':
-		$('#inspi5Submits').append(allFields);
+		$('#inspi5Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road6.jpg':
-		$('#inspi6Submits').append(allFields);
+		$('#inspi6Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road7.jpg':
-		$('#inspi7Submits').append(allFields);
+		$('#inspi7Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road8.jpg':
-		$('#inspi8Submits').append(allFields);
+		$('#inspi8Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road9.jpg':
-		$('#inspi9Submits').append(allFields);
+		$('#inspi9Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road10.jpg':
-		$('#inspi10Submits').append(allFields);
+		$('#inspi10Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road11.jpg':
-		$('#inspi11Submits').append(allFields);
+		$('#inspi11Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road12.jpg':
-		$('#inspi12Submits').append(allFields);
+		$('#inspi12Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road13.jpg':
-		$('#inspi13Submits').append(allFields);
+		$('#inspi13Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road14.jpg':
-		$('#inspi14Submits').append(allFields);
+		$('#inspi14Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road15.jpg':
-		$('#inspi15Submits').append(allFields);
+		$('#inspi15Submits').append(allFields + likebtn +createForm);
 		break;
 	}
 
@@ -175,7 +176,7 @@ $("#afterSubmit").on('submit', function(e){
 	$('#timeSubmit').attr('value', dateTime);
 
 	//add secondary submission below primary submission
-	$('#allResponse').append(submiterName2 + " " + aftersubmission + ' ' + likebtn);
+	$('#allResponse').append(submiterName2 + '</br>' + aftersubmission + '</br> ' + dateTimet + ' ' + likebtn);
 
 });
 
