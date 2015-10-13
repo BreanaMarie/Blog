@@ -98,7 +98,7 @@ body{
 
 .tab-pane img{
 	padding: 15px;
-	background-color: gray;
+	background-color: black;
 	display: block;
 	margin-top: 20px;
 	margin-bottom: 20px;
@@ -118,3 +118,13 @@ a:hover {
 	margin-left: -10px;
 }
 
+#like {
+	max-width: 50px;
+	float: right;
+	margin-top: 10px;
+}
+
+#counter{
+	margin-top: 10px;
+	float: left;
+}

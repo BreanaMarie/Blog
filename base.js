@@ -73,7 +73,13 @@ $("#photoselector img").on('click', function(e){
 
 $('#photodisplay img').attr('src', image);
 });
-	
+
+//add a like button to primary and secondary submitted 
+var likebtn= ('<button id="like" type="submit" class="form-control">Like</button>' + 
+	'<div id="counter"><p>There are currently: 0 Likes for this Submission</p></div>');
+
+var createForm='';
+var sort='';	
 var allFields='';	
 //gets the content submitted by primary user
 $("#primarySubmit").on('submit', function(e){
@@ -90,76 +96,111 @@ $("#primarySubmit").on('submit', function(e){
 	$('#timeSubmit').attr('value', dateTime);
 
 	//make the submission look like a pretty block of text
-	// allFields = $('<TABLE>
-	// 			   <TR>
-	// 			      <TD>' + submitName + '</TD>
-	// 			   </TR>
-	// 			   <TR>
-	// 			      <TD>' + submission + '</TD>
-	// 			   </TR>
-	// 			   <TR>
-	// 			      <TD>' + dateTime +'</TD>
-	// 			   </TR>
-	// 			</TABLE>');
+	allFields = ('<div><h2>' +  submitName + '</h2></br><p>' + submission + 
+		'</p></br><p align="right">' + dateTime + '</p></div>'); 
+
+	//add a form to primary submission
+	createForm= ('<div><form id="afterSubmit" class="col-sm-offset-1 col-sm-11" action="" method="PUT">'+
+		'<label><h2>Want to Respond to this Writer?</h2></label></br>'+
+		'<input id="submiterName2" type="text" name="name" placeholder="Enter Your Name"></input>'+
+		'</br><textarea id="userSubmit2"class="form-contol col-sm-offset-1 col-sm-10" rows="5" col="100" placeholder="Enter your response here" name="secondarySubmit"></textarea>'+
+		'<button type="submit" class="form-control">Submit</button></form></div>' +
+		'<div id="allResponse"></div>'
+		);
+
+
 
 	//create a switch statement that sorts the primary submission by the 
 	//image selected and pushes the information into corilating tabs
 	switch(image){
 		case 'images/road1.jpg':
-		$('#inspi1Submits').append(submitName + submission + dateTime);
+		sort= $('#inspi1Submits');
+		$('#inspi1Submits').append(allFields + likebtn +createForm);
 		break;
 		case 'images/road2.jpg':
-		$('#inspi2Submits').append(submitName + submission + dateTime);
+		$('#inspi2Submits').append(allFields);
 		break;
 		case 'images/road3.jpg':
-		$('#inspi3Submits').append(submitName + submission + dateTime);
+		$('#inspi3Submits').append(allFields);
 		break;
 		case 'images/road4.jpg':
-		$('#inspi4Submits').append(submitName + submission + dateTime);
+		$('#inspi4Submits').append(allFields);
 		break;
 		case 'images/road5.jpg':
-		$('#inspi5Submits').append(submitName + submission + dateTime);
+		$('#inspi5Submits').append(allFields);
 		break;
 		case 'images/road6.jpg':
-		$('#inspi6Submits').append(submitName + submission + dateTime);
+		$('#inspi6Submits').append(allFields);
 		break;
 		case 'images/road7.jpg':
-		$('#inspi7Submits').append(submitName + submission + dateTime);
+		$('#inspi7Submits').append(allFields);
 		break;
 		case 'images/road8.jpg':
-		$('#inspi8Submits').append(submitName + submission + dateTime);
+		$('#inspi8Submits').append(allFields);
 		break;
 		case 'images/road9.jpg':
-		$('#inspi9Submits').append(submitName + submission + dateTime);
+		$('#inspi9Submits').append(allFields);
 		break;
 		case 'images/road10.jpg':
-		$('#inspi10Submits').append(submitName + submission + dateTime);
+		$('#inspi10Submits').append(allFields);
 		break;
 		case 'images/road11.jpg':
-		$('#inspi11Submits').append(submitName + submission + dateTime);
+		$('#inspi11Submits').append(allFields);
 		break;
 		case 'images/road12.jpg':
-		$('#inspi12Submits').append(submitName + submission + dateTime);
+		$('#inspi12Submits').append(allFields);
 		break;
 		case 'images/road13.jpg':
-		$('#inspi13Submits').append(submitName + submission + dateTime);
+		$('#inspi13Submits').append(allFields);
 		break;
 		case 'images/road14.jpg':
-		$('#inspi14Submits').append(submitName + submission + dateTime);
+		$('#inspi14Submits').append(allFields);
 		break;
 		case 'images/road15.jpg':
-		$('#inspi15Submits').append(submitName + submission + dateTime);
+		$('#inspi15Submits').append(allFields);
 		break;
 	}
 
 });
 
+//take secondary submissions and post to original submit
+$("#afterSubmit").on('submit', function(e){
+	e.preventDefault();
+	var aftersubmission = $("#userSubmit2").val();
+	var submitName2 = $("#submiterName2").val();
+	console.log(aftersubmission);
+
+	//get a time stamp for the after submission
+	var dateTime= new Date();
+	$('#timeSubmit').attr('value', dateTime);
+
+	//add secondary submission below primary submission
+	$('#allResponse').append(submiterName2 + " " + aftersubmission + ' ' + likebtn);
+
+});
+
 //a like button function counter
-$("#like").click(function() {
+$("#like").on('click', function() {
     $('#counter').html(function(i, val) { 
-    	return + val+1 ;
+    	//return + val+1 ;
+    	count= val+1;
+    	console.log(count);
+    	$('#counter p').attr('p' , count);
+    	
 	});
 });
+
+// $('#counter').data('count', 0);
+// $('#like').click(function(){
+//     $('#counter').html(function(){
+//         var $this = $(this),
+//             count = $this.data('count') + 1;
+
+//         $this.data('count', count);
+//         //return count;
+//         $('#counter p').attr(p , count);
+//     });
+// });
 
 //clickable tabs
 $('#inspiTabs a[href="#profile"]').tab('show'); // Select tab by name
