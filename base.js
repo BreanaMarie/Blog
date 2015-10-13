@@ -176,6 +176,12 @@ $(window).load(function(){
     $('#inspiTabs a[href="#recents"]').tab('show');
 });
 
+//set default image tab showing #1
+$(window).load(function(){
+    $('#inspiSubmits a[href="#tab1"]').tab('show');
+});
+
+
 //create on submit function on form, text drops below as done
 // create a new form upon submit that will allow for comments
 

@@ -113,6 +113,8 @@ a:hover {
     background-color: yellow;
 }
 
-#inspiOneSubmits{
-
+#inspiSubmits a{
+	font-size: 15px;
+	margin-left: -10px;
 }
+
